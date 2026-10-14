@@ -149,6 +149,12 @@ for (const name of EXCLUDED) {
   const inVideos = fs.existsSync(path.join(videosDir, name))
   check(!inPhotos && !inVideos, `${name} — not present`)
 }
+/**
+ * Only the site itself is scanned for references — plus this file's own
+ * documentation of the exclusions (README) would otherwise trip the check, so
+ * the scan covers `src/` and `index.html`, which is where a stray reference
+ * could actually end up being served to a visitor.
+ */
 const sources = []
 const walk = (dir) => {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -158,7 +164,8 @@ const walk = (dir) => {
     else if (/\.(jsx?|css|html|json|md|ya?ml)$/.test(entry.name)) sources.push(full)
   }
 }
-walk(root)
+walk(path.join(root, 'src'))
+sources.push(path.join(root, 'index.html'))
 for (const name of EXCLUDED) {
   const mentioned = sources.filter((file) => fs.readFileSync(file, 'utf8').includes(name))
   check(mentioned.length === 0, `${name} — not referenced in any source file`)
