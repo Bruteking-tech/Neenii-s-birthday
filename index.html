@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#FBF7EF" />
+    <meta name="color-scheme" content="light" />
+
+    <title>For Neenii — A Little World of Memories</title>
+    <meta
+      name="description"
+      content="A little world of photographs, films and words, gathered for Neenii's birthday."
+    />
+    <meta name="author" content="Bruteking-tech" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="For Neenii — A Little World of Memories" />
+    <meta
+      property="og:description"
+      content="A little world of photographs, films and words, gathered for Neenii's birthday."
+    />
+    <meta property="og:image" content="./media/photos/Snapchat-129798896.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Hand-drawn envelope favicon (inline, no extra request) -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23FBF7EF'/%3E%3Cpath d='M6 10.5h20v13H6z' fill='none' stroke='%234C5440' stroke-width='1.4'/%3E%3Cpath d='M6 10.5l10 7.5 10-7.5' fill='none' stroke='%23BE8F7F' stroke-width='1.4'/%3E%3C/svg%3E"
+    />
+
+    <style>
+      /* First paint: warm paper, so there is never a white flash. */
+      html {
+        background: #fbf7ef;
+      }
+      body {
+        margin: 0;
+        background: #fbf7ef;
+        color: #2b241e;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font: 300 14px/1.6 Georgia, 'Times New Roman', serif;
+        letter-spacing: 0.34em;
+        text-transform: uppercase;
+        color: #9a8d7f;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <div id="boot">A moment…</div>
+
+    <noscript>
+      <div style="max-width: 40rem; margin: 12vh auto; padding: 0 1.5rem; font-family: Georgia, serif; color: #3a2e27">
+        <h1 style="font-weight: 400; font-size: 2rem">For Neenii</h1>
+        <p style="line-height: 1.8">
+          This little world needs JavaScript to open. The photographs and films live in
+          <code>public/media/</code> — you can still browse them directly from the repository.
+        </p>
+      </div>
+    </noscript>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
